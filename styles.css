@@ -1,0 +1,1032 @@
+.slide-down {
+  opacity: 0; /* Başlangıçta görünmez */
+  transform: translateY(-20px); /* Yukarıdan gelmesi için */
+  animation: slideDown 0.8s forwards; /* Animasyon süresi ve yönü */
+}
+
+@keyframes slideDown {
+  to {
+      opacity: 1; /* Görünür hale gel */
+      transform: translateY(0); /* Son konumu */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Settings button styling */
+#settings-button {
+  position: fixed;
+  top: 25px;
+  right: 15px;
+  z-index: 999;
+}
+
+#settings-toggle {
+  background-color: #3a6d8c;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.5s, background-color 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#settings-toggle:hover {
+  transform: rotate(360deg); /* Hover durumunda döndür */
+}
+
+.gear-icon {
+  fill: black; /* Varsayılan rengi siyah */
+  transition: fill 0.5s;
+}
+
+#settings-toggle:hover .gear-icon {
+  fill: #ffeed3; /* Hover olduğunda rengi sarıya çevir */
+}
+
+
+
+
+
+/* Settings menu styling */
+#settings-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 200px;
+}
+
+#settings-menu.show {
+  display: flex;
+}
+
+/* Individual setting option styling */
+.setting-option {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  color: #3a6d8c;
+}
+
+/* Toggle switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #3a6d8c;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Dark mode styling */
+.dark-mode {
+  background-color: #2c2c2c;
+  color: #f5f5f5;
+}
+
+.light-mode {
+  background-color: #f5f5f5;
+  color: #2c2c2c;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Buton Konteyneri */
+.button-container {
+  position: fixed;
+  display: flex;
+  gap: 20px; /* Butonlar arasında boşluk */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Popup Butonu */
+.popup-btn {
+  background-color: #dfd0b8;
+  color: #3a6d8c;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-btn:hover {
+  background-color: #c8b29f;
+}
+
+/* Popup Arka Planı */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Popup İçeriği */
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 600px; /* Popup genişliği */
+  height: 600px; /* Popup yüksekliği */
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* Gizlilik Politikası İçin Farklı Boyut */
+.privacy-popup {
+  width: 900px; /* Gizlilik politikası popup'ı genişliği */
+  height: 550; /* Gizlilik politikası popup'ı yüksekliği */
+  overflow-y: auto; /* Dikey kaydırma çubuğu ekle */
+  max-height: 80%; /* Maksimum yükseklik ayarı */
+}
+
+/* Kapat Butonu */
+.close-button {
+  float: right;
+  font-size: 24px;
+  color: #3a6d8c;
+  cursor: pointer;
+}
+
+/* Popup Başlık */
+.popup-content h2 {
+  margin-top: 0;
+  color: #3a6d8c;
+}
+
+/* Popup Mesaj */
+.popup-content p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Google Form Butonu */
+.form-button {
+  background-color: #dfd0b8;
+  color: #3a6d8c;
+  font-size: 16px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px; /* Üstten boşluk */
+}
+
+.form-button:hover {
+  background-color: #c8b29f;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.svg-turkiye-haritasi {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+}
+.svg-turkiye-haritasi svg {
+  width: 100%;
+  height: auto;
+}
+.il-isimleri {
+  position: absolute;
+  z-index: 2;
+}
+.il-isimleri div {
+  font-family: 'Open Sans';
+  display: inline-block;
+  background: #222;
+  color: #fff;
+  padding: 8px 16px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+#svg-turkiye-haritasi path {
+  cursor: pointer;
+}
+#svg-turkiye-haritasi path:hover {
+  fill: #666;
+}
+#bolge-1 g path{
+  fill:#646666
+}
+#bolge-2 g path{
+  fill:#b69d14
+}
+#bolge-3 g path{
+  fill:#916547
+}
+#bolge-4 g path{
+  fill:#005f77
+}
+#bolge-5 g path{
+  fill:#007924
+}
+#bolge-6 g path{
+  fill:#8f4500
+}
+#bolge-7 g path{
+  fill:#746756
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.yol-tarifi {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #7AB2B2;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.yol-tarifi:hover {
+  background-color: #4b6d6d;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Genel ayarlar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+}
+
+/* Ana menü çubuğu */
+.main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A6D8C; /* Turuncu renk */
+    padding: 20px 40px; /* Menüyü daha büyük yapmak için padding artırıldı */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-left {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-left li {
+    margin-right: 40px; /* Menü öğeleri arasındaki boşluk artırıldı */
+}
+
+.menu-left li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em; /* Yazı büyüklüğü artırıldı */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-left li a:hover {
+    background-color: #001F3F;
+    
+    
+    
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #001F3F;
+    border-radius: 5px;
+}
+
+.search-container button {
+    background-color: #3A6D8C;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-container button:hover {
+    background-color: #2b4e64;
+}
+
+/* Arma (Emblem) Tuşu */
+.menu-right {
+  margin-left: 20px; /* Arma tuşunu sağa itmek için margin artırıldı */
+}
+
+.arma {
+    width: 160px; /* Arma boyutu artırıldı */
+    height: 50px;
+    border-radius: 2%;
+    object-fit: none;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #3A6D8C, #6A9AB0);
+    color: white;
+    text-align: center;
+    padding: 40px 20px; /* Header'ı biraz küçülttüm */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em; /* Başlık küçültüldü */
+    margin: 0;
+}
+
+/* Popüler İller Bölümü */
+.populer-iller {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.populer-iller h2 {
+    color: #001F3F;
+    margin-bottom: 50px;
+    font-size: 3em;
+}
+
+.iller-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Her sırada beş kutu olacak şekilde ayarlandı */
+    gap: 30px;
+    justify-items: center;
+}
+
+.il-kutu {
+    background-color: #DFD0B8;
+    color: white;
+    width: 360px;
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.il-kutu img {
+    width: 100%;
+    height: 186px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.il-isim {
+    position: absolute; /* İl isimlerinin resimle birleşik olması için absolute yerleşim */
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.il-kutu:hover img {
+    transform: scale(1.1);
+    
+}
+
+.il-kutu:hover {
+    background-color: #524C42;
+    transform: translateY(-5px);
+    
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1200px) {
+    .iller-container {
+        grid-template-columns: repeat(4, 1fr); /* Daha küçük ekranlarda dört kutu */
+    }
+
+    .il-kutu {
+        width: 250px;
+        height: 170px;
+    }
+
+    .il-kutu img {
+        height: 110px;
+    }
+
+    .il-isim {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 992px) {
+    .iller-container {
+        grid-template-columns: repeat(3, 1fr); /* Daha küçük ekranlarda üç kutu */
+    }
+
+    .il-kutu {
+        width: 220px;
+        height: 160px;
+    }
+
+    .il-kutu img {
+        height: 100px;
+    }
+
+    .il-isim {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .iller-container {
+        grid-template-columns: repeat(2, 1fr); /* Daha küçük ekranlarda iki kutu */
+    }
+
+    .il-kutu {
+        width: 180px;
+        height: 140px;
+    }
+
+    .il-kutu img {
+        height: 80px;
+    }
+
+    .il-isim {
+        font-size: 1em;
+    }
+
+    .main-menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu-left {
+        flex-direction: column;
+    }
+
+    .menu-left li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .menu-right {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+
+body{
+    font-family:Arial
+  }
+  
+  
+  body {
+    font-size: 20px; /* Tüm sayfa için font boyutu */
+  }
+  
+  p {
+    font-size: 21px; /* Tüm sayfa için font boyutu */
+  }
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+    /* Ana Menü Çubuğu */
+  .main-menu {
+    background-color: #001F3F;
+    position: sticky;
+    top: 0;
+    width: 95,6%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .main-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-menu ul li {
+    margin-right: 20px;
+  }
+  
+  .main-menu ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+  }
+  
+  .main-menu ul li a:hover {
+    background-color: #EAD8B1;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+  }
+  
+  /* Header için Ekstra Boşluk */
+  header {
+    padding-top: 100px;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    color: #333;
+  }
+  
+  header {
+    background: linear-gradient(90deg, #001F3F, #6A9AB0);
+    color: #ffffff;
+    text-align: center;
+    padding: 2em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  main {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  section {
+    margin-bottom: 50px;
+  }
+  
+  section h2 {
+    font-size: 2em;
+    color: #344955;
+  }
+  
+  section p {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  
+  footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1.5em 0;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Genel ayarlar */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+  }
+  
+  /* Ana menü çubuğu */
+  .main-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A6D8C; /* Turuncu renk */
+    padding: 20px 40px; /* Menüyü daha büyük yapmak için padding artırıldı */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+  }
+  
+  .menu-left {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu-left li {
+    margin-right: 40px; /* Menü öğeleri arasındaki boşluk artırıldı */
+  }
+  
+  .menu-left li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em; /* Yazı büyüklüğü artırıldı */
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu-left li a:hover {
+    background-color: #001F3F;
+    
+  }
+  
+
+  
+  .il-isimleri div {
+    font-family: 'Open Sans';
+    display: inline-block;
+    background: #001F3F; /* Turuncu renk */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1.2em; /* Yazı boyutunu büyüttüm */
+  }
+  
+  /* Resmi göstermek için ek stil */
+  .il-isimleri img {
+    width: 150px; /* Resim genişliği */
+    height: auto; /* Orantılı yükseklik */
+    display: block;
+    margin-top: 5px; /* Resim ile yazı arasında boşluk */
+  }
+  
+  /* Diğer stiller... (varsa) */
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
