@@ -85,13 +85,13 @@ body {
   }
   
   h3 {
-    margin: 15px 0;
+    margin: 15px 1px;
     font-size: 28px;
     color: #3a6d8c;
     letter-spacing: 1.2px;
-    position:absolute;
-    left: 560px;
-    top: -5px;
+    position:relative;
+    right: -200px;
+    top: -20px;
   }
   
   p {
@@ -102,6 +102,8 @@ body {
     right: 30px;
     margin-bottom: 20px;
     line-height: 0,5;
+    position: absolute;
+    top: 50px;
   }
   
   
@@ -122,7 +124,7 @@ body {
     position: absolute;
     right: 700px;
     z-index: 1;
-    margin-top: 270px;
+    margin-top: 220px;
   }
   
   .yol-tarifi-btn:hover {
