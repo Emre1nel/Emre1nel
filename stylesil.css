@@ -1,0 +1,297 @@
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f5f5, #e2e8f0);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h1 {
+    margin-top: 20px;
+    font-size: 70px;
+    color: #2c3e50;
+    letter-spacing: 2px;
+    animation: slideInFromTop 1s ease-in-out;
+  }
+  
+  h2 {
+    margin: 20px 0;
+    font-size: 50px;
+    color: #34495e;
+    letter-spacing: 1.5px;
+    animation: slideInFromTop 1.2s ease-in-out;
+  }
+  
+  .grid-container {
+    display: grid;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+    opacity: 0;
+    animation: fadeInGrid 1.5s forwards;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+  .grid-item {
+    
+    position: relative;
+    overflow: hidden;
+    width: 850px; 
+    height: 350px;
+    background-color: #d1c8bac4!important;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid #ddd;
+  }
+  
+  
+  .grid-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grid-item img {
+    width: 350px;
+    height: 230px!important;
+    object-fit: fixed;
+    border-radius: 20px;
+    transition: transform 0.4s ease, border-radius 0.4s ease;
+    position: absolute;
+    left: 40px;
+    top: 50px;
+  }
+  
+  .grid-item:hover img {
+    transform: scale(1.10);
+    border-radius: 20px;
+  }
+  
+  .content {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    margin: 15px 0;
+    font-size: 28px;
+    color: #3a6d8c;
+    letter-spacing: 1.2px;
+    position:absolute;
+    left: 560px;
+    top: -5px;
+  }
+  
+  p {
+    font-size: 18px;
+    max-width: 450px;
+    color: #555;
+    position: absolute;
+    right: 30px;
+    margin-bottom: 20px;
+    line-height: 0,5;
+  }
+  
+  
+  .yol-tarifi-btn {
+    text-decoration: none; /* Alt çizgiyi kaldırır */
+    padding: 12px 28px;
+    background-color: #3a6d8c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    right: 700px;
+    z-index: 1;
+    margin-top: 270px;
+  }
+  
+  .yol-tarifi-btn:hover {
+    background-color: #dfd0b8;
+    transform: scale(1.08);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  .konum-ikonu {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideInFromTop {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  @keyframes fadeInGrid {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  
+  
+
+  
+  
+  
+  
+  
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş animasyonu */
+    border: 1px solid #ddd;
+  }
+  
+  .grid-item img {
+    max-width: 100%;
+    border-radius: 10px; /* Resim kenarlarını yumuşatma */
+  }
+  
+  
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)!important;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  
+
+  
+  .grid-item {
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş animasyonu */
+    border: 1px solid #ddd;
+  }
+
+
+  .grid-item{
+    position: relative;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Geçiş animasyonu */
+    border: 1px solid #ddd;
+  }
+
+
+
+  
+  .grid-item img {
+    max-width: 100%;
+    height: auto; /* Resim yüksekliğini otomatik ayarlama */
+    border-radius: 10px; /* Resim kenarlarını yumuşatma */
+  }
+  
+  .menu-btn {
+    background-color: #3a6d8c; /* Buton arka plan rengi */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Buton hover geçişi */
+    position: absolute;
+    top: 250px;
+  }
+  
+  .menu-btn:hover {
+    background-color: #2c5a68; /* Hover rengi */
+    
+  }
+  
+  /* Başlıklar için stil */
+  h2 {
+    grid-column: span 3; /* Başlıkları tüm sütunları kaplayacak şekilde ayarlama */
+    text-align: center; /* Ortalıyoruz */
+    color: #3a6d8c; /* Başlık rengi */
+    margin-bottom: 20px; /* Başlık altı boşluk */
+  }
+  
+  
+  .menu-btn {
+    padding: 12px 28px;
+    background-color: #3a6d8c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    margin-top: 10px;
+  }
+  
+  .menu-btn:hover {
+    background-color: #dfd0b8; /* Hover rengi */
+    
+  }
+  
+  
+  .route-btn {
+    padding: 12px 28px;
+    background-color: #3a6d8c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+    margin-left: 120px;
+    top: -42px;
+  }
+  
+  .route-btn:hover {
+    background-color: #dfd0b8 /* Hover rengi */
+  }

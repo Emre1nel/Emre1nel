@@ -1,3 +1,76 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Çok geniş ekranlarda aşırı genişlemeyi engeller */
+  margin: 0 auto; /* Ortalar */
+}
+
+img {
+  max-width: 100%;
+  height: auto; /* Görüntülerin ekran boyutuna uyumlu olmasını sağlar */
+}
+
+
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column; /* Menü elemanları mobilde dikey olur */
+  }
+
+  .sidebar {
+    display: none; /* Küçük ekranlarda yan menüyü gizler */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .slide-down {
   opacity: 0; /* Başlangıçta görünmez */
   transform: translateY(-20px); /* Yukarıdan gelmesi için */
@@ -570,6 +643,7 @@ body {
     
     
     
+    
 }
 
 .search-container {
@@ -684,6 +758,7 @@ header h1 {
 .il-kutu:hover {
     background-color: #524C42;
     transform: translateY(-5px);
+    
     
 }
 
@@ -826,12 +901,14 @@ body{
     font-weight: bold;
     font-size: 1.1em;
     transition: background-color 0.3s;
+    border-radius: 11px;
   }
   
   .main-menu ul li a:hover {
     background-color: #EAD8B1;
     color: rgb(0, 0, 0);
     border-radius: 10px;
+    
   }
   
   /* Header için Ekstra Boşluk */
@@ -914,6 +991,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     background-color: #f8f8f8;
+    
   }
   
   /* Ana menü çubuğu */
@@ -927,6 +1005,7 @@ body{
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
     
   }
   
@@ -952,7 +1031,9 @@ body{
   }
   
   .menu-left li a:hover {
+    border-radius: 11px;
     background-color: #001F3F;
+
     
   }
   
