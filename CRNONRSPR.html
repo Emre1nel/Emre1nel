@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emerden Notlar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #ff6b81;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .note-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+        .note {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background 0.3s ease;
+            cursor: pointer;
+        }
+        .note img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .note:hover {
+            transform: translateY(-5px);
+            background: #ff6b81;
+            color: white;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .modal-content h2 {
+            margin-top: 0;
+            color: #ff6b81;
+        }
+        .close-btn {
+            background: #ff6b81;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .close-btn:hover {
+            background: #ff4a61;
+        }
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+            header p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Emerden Notlar</h1>
+        <p>❤️Her Gün Bir Notu Aç Canım Sevgilim❤️</p>
+    </header>
+    <div class="note-container">
+        <div class="note" onclick="openModal(1)">
+            <alt="Gün 1">
+            💖Gün-1 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(2)">
+            <alt="Gün 2">
+            💖Gün-2 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(3)">
+            <alt="Gün 3">
+            💖Gün-3 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(4)">
+            <alt="Gün 4">
+            💖Gün-4 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(5)">
+            <alt="Gün 5">
+            💖Gün-5 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(6)">
+            <alt="Gün 6">
+            💖Gün-6 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(7)">
+            <alt="Gün 7">
+            💖Gün-7 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(8)">
+            <alt="Gün 8">
+            💖Gün-8 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(9)">
+            <alt="Gün 9">
+            💖Gün-9 Notu Aç💖
+        </div>
+        <div class="note" onclick="openModal(10)">
+            <alt="Gün 10">
+            💖Gün-10 Notu Aç💖
+        </div>
+    </div>
+
+    <div class="modal" id="noteModal">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+            <button class="close-btn" onclick="closeModal()">Kapat</button>
+        </div>
+    </div>
+
+    <script>
+        const notes = [
+        { text:   "Aşkım seni her geçen gün daha çok seviyorum.", date: "2025-04-11" },
+        { text:   "Bebeğim sen benim hayatımın anlamı ve neşesisin.",date: "2025-04-12" },
+        { text:   "Bitanem birlikte geçirdiğimiz her an ayrı güzel",date: "2025-04-13" },
+        { text:   "Canım iyi ki tanışmışız iyi ki varsın",date: "2025-04-14" },
+        { text:   "Bebişim sen bu hayatta başıma gelen en güzel şeysin",date: "2025-04-15" },
+        { text:   "Aşkım sana sonsuza kadar sarılabilirim",date: "2025-04-16" },
+        { text:   "Canım sen benim herşeyimsin en değerlimsin",date: "2025-04-17" },
+        { text:   "Bitanem dünyanın en güzel ve en tatlı kızısın her halinle çok güzelsin",date: "2025-04-18" },
+        { text:   "Aşkım ne olursa olsun her zaman yanındayım canımı bile vermeye hazırım senin için",date: "2025-04-19" },
+        { text:   "Canım sen benim herşeyimsin seni tüm kalbimle sonsuz seviyorum",date: "2025-04-20" },
+        ];
+
+        function checkAvailability() {
+        const currentDate = new Date();
+        const notesElements = document.querySelectorAll('.note');
+
+        notes.forEach((note, index) => {
+            const noteDate = new Date(note.date);
+            const noteElement = notesElements[index];
+
+            if (currentDate < noteDate) {
+                noteElement.classList.add("disabled");
+                noteElement.onclick = () => alert("Aşkım Her Güne Bir Not <3");
+            } else {
+                noteElement.onclick = () => openModal(index + 1);
+            }
+        });
+    }
+
+    function openModal(day) {
+        const modal = document.getElementById("noteModal");
+        const title = document.getElementById("modalTitle");
+        const text = document.getElementById("modalText");
+
+        title.textContent = `Gün ${day}`;
+        text.textContent = notes[day - 1].text;
+
+        modal.classList.add("active");
+    }
+
+    function closeModal() {
+        const modal = document.getElementById("noteModal");
+        modal.classList.remove("active");
+    }
+
+    document.addEventListener("DOMContentLoaded", checkAvailability);
+    </script>
+</body>
+</html>
