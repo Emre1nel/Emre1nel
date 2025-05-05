@@ -148,7 +148,7 @@ p {
 
 .yol-tarifi-btn:hover {
   background-color: #dfd0b8;
-  transform: scale(1.08);
+  transform: scale(1.02);
   box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15);
 }
 
