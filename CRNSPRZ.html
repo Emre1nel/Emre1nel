@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRNSPRZ</title>
+    <style>
+        /* Genel stil ayarları */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: url('images11/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: rgb(255, 88, 88);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            color: #fafafa;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #000000;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .counter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            color: #ff4081;
+            max-width: 80%;
+            animation: slideDown 1.5s ease-in-out;
+        }
+
+        .counter h2, .counter span {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1.5s ease-in-out forwards;
+        }
+
+        .item:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .item:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .item:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        .item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .photo {
+            flex: 1;
+            width: 150px;
+            height: 150px;
+            background-size:   contain;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: pulse 3s infinite;
+        }
+
+        .description {
+            flex: 2;
+            margin: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 10px;
+            color: rgb(255, 104, 104);
+            font-size: 1rem;
+            text-align: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .description:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Animasyon tanımlamaları */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>HAYATIMIN EN GÜZEL ANLARI</h1>
+    <div class="counter" id="counter">
+        <h3>Bugün tam</h3>
+        <span id="time-display">-- gün -- saat -- dakika -- saniye</span>
+        <h3>oldu!</h3>
+    </div>
+
+    <div class="timeline">
+        <div class="item">
+            <div class="photo" style="background-image: url('images11/p1.jpeg');"></div>
+            <div class="description">💕Sevgili olduğumuz gün hayatımın en mutlu günüydü 💕</div>
+        </div>
+        <div class="item">
+            <div class="photo" style="background-image: url('images11/p2.jpeg');"></div>
+            <div class="description">💕Sevgili olarak okuldaki ilk günümüz heycandan kalbim çıkıcaktı💕</div>
+        </div>
+        <div class="item">
+            <div class="photo" style="background-image: url('images11/p3.jpeg');"></div>
+            <div class="description">💕İlk buluşmalarımızdan biri beni ilk kez öpmüştün bayılıcaktım💕</div>
+        </div>
+                <div class="item">
+            <div class="photo" style="background-image: url('images11/p4y.jpeg');"></div>
+            <div class="description">💕Antalayada ilk buluşmamız anlatyayı gezmek hiç bu kadar güzel olmamıştı💕</div>
+        </div>
+                <div class="item">
+            <div class="photo" style="background-image: url('images11/p5y.jpg');"></div>
+            <div class="description">💕İlk defa uzun süre ayrı kalıcaktık çok üzgündüm💕</div>
+        </div>
+                <div class="item">
+            <div class="photo" style="background-image: url('images11/p6.jpeg');"></div>
+            <div class="description">💕12 günlük hasterimizin ardıdandan ilk fotorafımız seni çook özlemiştim💕</div>
+        </div>
+                </div>
+                <div class="item">
+            <div class="photo" style="background-image: url('images11/p7y.jpg');"></div>
+            <div class="description">💕Son zamanlardaki en güzel fotorafımız seninle vakit geçirmeyi çok seviyorum hayatım💕</div>
+        </div>
+    </div>
+<h2>DAHA BURAYA SIĞMAYAN BİNLERCE GÜZEL ANIMIZ VAR BEBEĞİM SENİNLE GEÇİRDİĞİM HER AN ÇOK GüZEL SENİ ÇOK SEVİYORUM</h2>
+
+    <script>
+        // Sayaç kodu
+        function updateCounter() {
+            const startDate = new Date('2023-12-06T18:00:00'); // Başlangıç zamanı
+            const now = new Date();
+            const difference = now - startDate;
+
+            // Gün, saat, dakika ve saniyeyi hesapla
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            // Ekrana yaz
+            document.getElementById('time-display').textContent = 
+                `${days} gün ${hours} saat ${minutes} dakika ${seconds} saniye`;
+        }
+
+        // Her saniye güncellenmesi için
+        setInterval(updateCounter, 1000);
+        window.onload = updateCounter;
+    </script>
+</body>
+</html>
